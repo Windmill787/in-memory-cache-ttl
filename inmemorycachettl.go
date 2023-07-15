@@ -1,4 +1,4 @@
-package inmemorycachettl
+package main
 
 import (
 	"fmt"

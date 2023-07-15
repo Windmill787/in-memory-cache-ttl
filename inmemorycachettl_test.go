@@ -1,4 +1,4 @@
-package inmemorycachettl
+package main
 
 import (
 	"testing"
@@ -40,7 +40,6 @@ func TestDeleteEmpty(t *testing.T) {
 	key := "test"
 
 	c := NewCache()
-	// c.Set(key, 1, time.Second*5)
 	c.Delete(key)
 	value, err := c.Get(key)
 	if err == nil {
