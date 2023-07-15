@@ -30,7 +30,7 @@ func (c *Cache) Set(key string, value interface{}, ttl time.Duration) {
 	defer c.mu.Unlock()
 
 	c.storage[key] = NewCacheItem(value, ttl)
-	time.AfterFunc(ttl, func() { delete(c.storage, key) })
+	time.AfterFunc(ttl, func() { c.Delete(key) })
 }
 
 func (c *Cache) Get(key string) (interface{}, error) {
